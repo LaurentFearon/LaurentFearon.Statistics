@@ -15,7 +15,7 @@ namespace LaurentFearon.Statistics
             double lastValue = startValue;
 
             rClassValues.Add(startValue);
-            for (int i = 0; i < numberOfClasses; i++)
+            for (int i = 0; i < numberOfClasses-1; i++)
             {
                 double value = lastValue + classWidth;
                 rClassValues.Add(value);
@@ -31,7 +31,21 @@ namespace LaurentFearon.Statistics
 
             for (int i = 0; i < rClasses.Count(); i++)
             {
-                int count = i - 1 >= 0 ? rValues.Where(x => x <= rClasses.ElementAt(i) && x > rClasses.ElementAt(i - 1)).Count() : rValues.Where(x => x <= rClasses.ElementAt(i)).Count();
+                int count = -1;
+
+                if(i == 0)
+                {
+                    count = rValues.Where(x => x < rClasses.ElementAt(i)).Count();
+                }
+                else if (i == rClasses.Count() -1)
+                {
+                    count = rValues.Where(x => x >= rClasses.ElementAt(i)).Count();
+                }
+                else
+                {
+                   count = rValues.Where(x => x < rClasses.ElementAt(i) && x >= rClasses.ElementAt(i - 1)).Count();
+                }
+
                 rClassFrequencies.Add(new KeyValuePair<double, int>(rClasses.ElementAt(i), count));
             }
 

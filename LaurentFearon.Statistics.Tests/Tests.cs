@@ -1,4 +1,12 @@
-﻿using System;
+﻿///
+/// Created by Laurent Fearon
+/// Contact Info: Laurent.Fearon@gmail.com
+/// Project Site: https://github.com/LaurentFearon/LaurentFearon.Statistics
+/// Apache License 2.0
+/// See License file: https://github.com/LaurentFearon/LaurentFearon.Statistics/blob/master/LICENSE.md
+///
+
+using System;
 using NUnit.Framework;
 using System.Collections.Generic;
 using FluentAssertions;
@@ -230,22 +238,22 @@ namespace LaurentFearon.Statistics.Tests
             double mean = rMesswerte.Average();
             double standardDev = Calculations.CalculateStandardDeviation_Population(rMesswerte, mean);
 
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(0), mean, standardDev).Should().BeApproximately(0.000072251, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(1), mean, standardDev).Should().BeApproximately(0.000256378, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(2), mean, standardDev).Should().BeApproximately(0.000715156, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(3), mean, standardDev).Should().BeApproximately(0.001568199, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(4), mean, standardDev).Should().BeApproximately(0.002703220, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(5), mean, standardDev).Should().BeApproximately(0.003663042, 0.00002);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(6), mean, standardDev).Should().BeApproximately(0.003901958, 0.00002);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(7), mean, standardDev).Should().BeApproximately(0.003267408, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(8), mean, standardDev).Should().BeApproximately(0.002150822, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(9), mean, standardDev).Should().BeApproximately(0.001112976, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(10), mean, standardDev).Should().BeApproximately(0.000452738, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(11), mean, standardDev).Should().BeApproximately(0.000144773, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(12), mean, standardDev).Should().BeApproximately(0.000036392, 0.00001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(13), mean, standardDev).Should().BeApproximately(0.000007191, 0.000001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(14), mean, standardDev).Should().BeApproximately(0.000001117, 0.000001);
-            Calculations.CalculateStandardDistribution(rClasses.ElementAt(15), mean, standardDev).Should().BeApproximately(0.000000136, 0.0000001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(0), mean, standardDev).Should().BeApproximately(0.000072251, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(1), mean, standardDev).Should().BeApproximately(0.000256378, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(2), mean, standardDev).Should().BeApproximately(0.000715156, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(3), mean, standardDev).Should().BeApproximately(0.001568199, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(4), mean, standardDev).Should().BeApproximately(0.002703220, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(5), mean, standardDev).Should().BeApproximately(0.003663042, 0.00002);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(6), mean, standardDev).Should().BeApproximately(0.003901958, 0.00002);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(7), mean, standardDev).Should().BeApproximately(0.003267408, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(8), mean, standardDev).Should().BeApproximately(0.002150822, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(9), mean, standardDev).Should().BeApproximately(0.001112976, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(10), mean, standardDev).Should().BeApproximately(0.000452738, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(11), mean, standardDev).Should().BeApproximately(0.000144773, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(12), mean, standardDev).Should().BeApproximately(0.000036392, 0.00001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(13), mean, standardDev).Should().BeApproximately(0.000007191, 0.000001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(14), mean, standardDev).Should().BeApproximately(0.000001117, 0.000001);
+            Calculations.CalculateNormalDistribution(rClasses.ElementAt(15), mean, standardDev).Should().BeApproximately(0.000000136, 0.0000001);
         }
 
         //[Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod]
